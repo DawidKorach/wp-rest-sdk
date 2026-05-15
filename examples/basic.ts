@@ -1,6 +1,6 @@
 // examples/basic.ts
 
-import { createWordPressSdk } from "@da-core/wordpress-sdk";
+import { createWordPressSdk } from "@da-core/wp-rest-sdk";
 
 const wp = createWordPressSdk({
 	baseUrl: "https://example.com",
