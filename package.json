@@ -1,0 +1,40 @@
+{
+	"name": "@da-core/wp-rest-sdk",
+	"author": "Dawid Korach",
+	"version": "1.0.0",
+	"description": "Strongly typed TypeScript SDK for WordPress REST API v2.",
+	"type": "module",
+	"sideEffects": false,
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"scripts": {
+		"clean": "rimraf dist",
+		"typecheck": "tsc --noEmit",
+		"build": "tsc -p tsconfig.json"
+	},
+	"keywords": [
+		"wordpress",
+		"rest",
+		"api",
+		"sdk",
+		"typescript"
+	],
+	"license": "MIT",
+	"engines": {
+		"node": ">=18"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.15",
+		"rimraf": "^6.1.3",
+		"typescript": "^6.0.3"
+	}
+}
