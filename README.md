@@ -90,6 +90,33 @@ const draft = await wp.posts.create({
 });
 ```
 
+## Next.js integration
+
+The SDK core is framework-agnostic. For Next.js App Router projects, use the `/next` entrypoint to pass Next-specific `fetch` options such as `revalidate` and cache tags.
+
+```ts
+import { createNextWordPressSdk } from "@da-core/wp-rest-sdk/next";
+
+export function createCachedWordPressSdk() {
+	return createNextWordPressSdk({
+		baseUrl: process.env.WORDPRESS_BASE_URL!,
+		auth: {
+			type: "application-password",
+			username: process.env.WORDPRESS_USER!,
+			applicationPassword: process.env.WORDPRESS_APP_CODE!,
+		},
+		timeoutMs: 15_000,
+		retry: { retries: 2 },
+		nextFetch: {
+			next: {
+				revalidate: 3600,
+				tags: ["wordpress"],
+			},
+		},
+	});
+}
+```
+
 ## Authentication
 
 Built-in authentication strategies:

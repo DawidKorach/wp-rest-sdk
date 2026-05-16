@@ -17,6 +17,10 @@
 		".": {
 			"import": "./dist/index.js",
 			"types": "./dist/index.d.ts"
+		},
+		"./next": {
+			"import": "./dist/integrations/next/index.js",
+			"types": "./dist/integrations/next/index.d.ts"
 		}
 	},
 	"files": [

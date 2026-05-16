@@ -17,8 +17,4 @@ export class TagsResource extends CrudResource<WpTerm, CreateTermInput, UpdateTe
 	}
 }
 
-export class TermsResource extends CrudResource<WpTerm, CreateTermInput, UpdateTermInput, TermCollectionQuery> {
-	public constructor(client: WordPressRestClient, taxonomyRestBase: string) {
-		super(client, taxonomyRestBase);
-	}
-}
+export class TermsResource extends CrudResource<WpTerm, CreateTermInput, UpdateTermInput, TermCollectionQuery> {}
